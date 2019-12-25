@@ -5,7 +5,7 @@ Parser for NEA haze api
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install st-scraper.
+Use the package manager [npm](https://www.npmjs.com/) to install sg-haze.
 
 ```bash
 npm install sg-haze
