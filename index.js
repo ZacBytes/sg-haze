@@ -1,18 +1,12 @@
 const request = require('request');
 
-const urls = {
-	pm25: "https://api.data.gov.sg/v1/environment/pm25",
-	psi: "https://api.data.gov.sg/v1/environment/psi"
-}
-
-
 function sghaze () {}
 
 sghaze.prototype.getPSI = function (callback) {
 
-		request(urls.psi, function (error, response, body) {
+		request("https://api.data.gov.sg/v1/environment/psi", function (error, response, body) {
 			if(error || response.statusCode !== 200 || body === undefined) {callback("NEA PSI API is down")};
-
+			console.log(body["items"])
 			var psi_table = body["items"][0]["readings"]["psi_twenty_four_hourly"]
 			var HealthStatus = "Error"
 
@@ -53,7 +47,7 @@ sghaze.prototype.getPSI = function (callback) {
 
 sghaze.prototype.getPM25 = function (callback) {
 
-	request(urls.pm25, function (error, response, body) {
+	request("https://api.data.gov.sg/v1/environment/pm25", function (error, response, body) {
 		if(error || response.statusCode !== 200 || body === undefined) {callback("NEA PM2.5 API is down")};
 
 		var pm25_table = body["items"][0]["readings"]["pm25_one_hourly"]
