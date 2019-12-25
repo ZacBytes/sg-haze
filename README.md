@@ -13,7 +13,7 @@ npm install sg-haze
 
 ## Usage
 
-```node_js
+```js
 const sghaze = require('sg-haze');
 
 sghaze.getPSI(function(err, PSIData){
