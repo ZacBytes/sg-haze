@@ -1,6 +1,6 @@
 {
   "name": "sg-haze",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parser for NEA haze api",
   "main": "index.js",
   "scripts": {
