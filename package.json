@@ -1,0 +1,31 @@
+{
+  "name": "sg-haze",
+  "version": "1.0.0",
+  "description": "Parser for NEA haze api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "sg",
+    "singapore",
+    "haze",
+    "nea",
+    "psi",
+    "parser",
+    "pm2.5"
+  ],
+  "author": "Zachary Lim <zacharylimjx@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZacBytes/sg-haze"
+  },
+  "bugs": {
+    "url": "https://github.com/ZacBytes/sg-hazeissues"
+  },
+  "homepage": "https://github.com/ZacBytes/sg-haze#readme"
+}
