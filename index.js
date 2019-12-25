@@ -5,9 +5,10 @@ function sghaze () {}
 sghaze.prototype.getPSI = function (callback) {
 
 		request("https://api.data.gov.sg/v1/environment/psi", function (error, response, body) {
-			if(error || response.statusCode !== 200 || body === undefined) {callback("NEA PSI API is down")};
-			console.log(body["items"])
-			var psi_table = body["items"][0]["readings"]["psi_twenty_four_hourly"]
+			if(error || response.statusCode !== 200) {callback("NEA PSI API is down")};
+			body = JSON.parse(body)
+			
+			var psi_table = body.items[0]["readings"]["psi_twenty_four_hourly"]
 			var HealthStatus = "Error"
 
 			var NationalPSI = psi_table["national"]
@@ -48,9 +49,10 @@ sghaze.prototype.getPSI = function (callback) {
 sghaze.prototype.getPM25 = function (callback) {
 
 	request("https://api.data.gov.sg/v1/environment/pm25", function (error, response, body) {
-		if(error || response.statusCode !== 200 || body === undefined) {callback("NEA PM2.5 API is down")};
+		if(error || response.statusCode !== 200) {callback("NEA PM2.5 API is down")};
+		body = JSON.parse(body)
 
-		var pm25_table = body["items"][0]["readings"]["pm25_one_hourly"]
+		var pm25_table = body.items[0]["readings"]["pm25_one_hourly"]
 
 		var NorthPM25 = pm25_table["north"]
 		var NorthHealthStatus = "Error"
